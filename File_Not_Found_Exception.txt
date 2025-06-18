@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+public class Exception{
+public static void main(String[] args){
+try{
+BufferedReader reader=new BufferedReader(new FileReader("non_exsistent_file.txt"));
+String line;
+while((line=reader.readLine())!=null){
+System.out.println(line);
+}
+}
+catch(FileNotFoundException e){
+System.err.println("Error: The file was not found.");
+e.printStackTrace();
+}
+catch(IOException e){
+System.err.println("An I/O error occureed: "+e.getMessage());
+}
+}
+}

@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Calculator4 {
+public static int add(int a, int b) {
+int result = a + b;
+return result;
+}
+public static int subtract(int a, int b) {
+int result = a - b;
+return result;
+}
+public static int multiply(int a, int b) {
+int result = a * b;
+return result;
+}
+public static int divide(int a, int b) {
+if (b == 0) {
+System.out.println("Error: Division by zero");
+return 0;
+}
+int result = a / b;
+return result;
+}
+
+public static int calculate(int num1,int num2,char op){
+int res;
+if(op=='+'){
+res=add(num1,num2);
+}
+else if(op=='-'){
+res=subtract(num1,num2);
+}
+else if(op=='*'){
+res=multiply(num1,num2);
+}
+else if(op=='/'){
+res=divide(num1,num2);
+}
+else{
+System.out.println("Invalid");
+return 0;
+}
+return res;
+}
+
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter first number: ");
+int n1=sc.nextInt();
+System.out.println("Enter second number: ");
+int n2=sc.nextInt();
+System.out.println("Enter an operator:(+,-,*,/)");
+char op=sc.next().charAt(0);
+int result=calculate(n1,n2,op);
+System.out.println("Result: "+result);
+sc.close();
+}
+}

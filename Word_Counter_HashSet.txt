@@ -1,0 +1,32 @@
+/*Coding Exercise: Unique word counter with HashSet
+Problem Statement:
+Write a Java program that reads a sentence from the user. The program should then:
+1. Count the total number of words.
+2. Count the number of unique words using a HashSet.
+3. Print all the unique words.
+
+String[] words= input.toLowerCase().split("\\W+");
+*/
+import java.util.Scanner;
+import java.util.HashSet;
+public class UniqueWordCounter{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter a sentence: ");
+String input=sc.nextLine();
+String[] words=input.toLowerCase().split("\\W+");
+HashSet<String> uniqueWords=new HashSet<>();
+for(String word:words){
+if(!word.isEmpty()){
+uniqueWords.add(word);
+}
+}
+System.out.println("Total Words: "+words.length);
+System.out.println("Unique words count: "+uniqueWords.size());
+System.out.println("Unique Words: ");
+for(String word:uniqueWords){
+System.out.println(word);
+}
+sc.close();
+}
+}

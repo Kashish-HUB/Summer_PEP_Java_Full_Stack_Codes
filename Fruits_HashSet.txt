@@ -1,0 +1,28 @@
+//HashSet<DataType> hashSetName=new HashSet<>();
+import java.util.HashSet;
+import java.util.Iterator;
+public class Hash_Set{
+public static void main(String[] args){
+HashSet<String> fruitMenu=new HashSet<>();
+
+fruitMenu.add("Orange");
+fruitMenu.add("Apple");
+fruitMenu.add("Kiwi");
+
+fruitMenu.remove("Kiwi");
+if (fruitMenu.contains("Apple")){
+System.out.println("Apple is in the menu");
+}
+System.out.println("Total Fruits: "+fruitMenu.size());
+System.out.println("Is the menu empty: "+fruitMenu.isEmpty());
+System.out.println("ALL FRUITS: ");
+Iterator<String> it=fruitMenu.iterator();
+while(it.hasNext()){
+String fruit=it.next();
+System.out.println(fruit);
+}
+fruitMenu.clear();
+System.out.println("Menu Cleared....");
+System.out.println("Is the menu empty now....."+fruitMenu.isEmpty());
+}
+}

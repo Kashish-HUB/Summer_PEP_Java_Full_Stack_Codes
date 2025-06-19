@@ -1,0 +1,97 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+class InvalidGrades extends java.lang.Exception {
+    public InvalidGrades(String message) {
+        super(message);
+    }
+}
+
+class InvalidNameException extends java.lang.Exception {
+    public InvalidNameException(String message) {
+        super(message);
+    }
+}
+
+class StudentRecord {
+    int studentid;
+    String name;
+    int grade;
+
+    public StudentRecord(int studentid, String name, int grade) {
+        this.studentid = studentid;
+        this.name = name;
+        this.grade = grade;
+    }
+}
+
+public class CustomException {
+
+    public static void main(String[] args) {
+        String filepath = "Grades.csv";
+        List<StudentRecord> validrecords = new ArrayList<>();
+        int invalidRecordCount = 0;
+        int totalRecords = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                totalRecords++;
+                String[] parts = line.split(",");
+                try {
+                    if (parts.length != 3) {
+                        throw new IllegalArgumentException("Incorrect number of fields");
+                    }
+
+                    int id = Integer.parseInt(parts[0].trim());
+                    String name = parts[1].trim();
+                    int grade = Integer.parseInt(parts[2].trim());
+
+                    if (id < 0) {
+                        throw new IllegalArgumentException("Student ID must be positive");
+                    }
+
+                    if (name.isEmpty() || name.trim().isEmpty()) {
+                        throw new InvalidNameException("Name cannot be empty or blank");
+                    }
+
+                    if (grade < 0 || grade > 100) {
+                        throw new InvalidGrades("Grades must be between 0-100");
+                    }
+
+                    validrecords.add(new StudentRecord(id, name, grade));
+
+                } catch (NumberFormatException e) {
+                    System.err.println("Skipping record: invalid number format -> " + line);
+                    invalidRecordCount++;
+                } catch (IllegalArgumentException | InvalidGrades | InvalidNameException e) {
+                    System.err.println("Skipping invalid record (" + e.getMessage() + "): " + line);
+                    invalidRecordCount++;
+                }
+            }
+
+            double sum = 0;
+            for (StudentRecord record : validrecords) {
+                sum += record.grade;
+            }
+
+            double average = validrecords.isEmpty() ? 0 : sum / validrecords.size();
+
+            System.out.println("\n---- Processing Summary ----");
+            System.out.println("Total records processed: " + totalRecords);
+            System.out.println("Valid records: " + validrecords.size());
+            System.out.println("Invalid records: " + invalidRecordCount);
+            System.out.printf("Average grade of valid records: %.2f\n", average);
+
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: file not found at path " + filepath);
+        } catch (IOException e) {
+            System.err.println("An I/O error occurred: " + e.getMessage());
+        }
+    }
+}

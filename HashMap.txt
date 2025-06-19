@@ -1,0 +1,24 @@
+import java.util.*;
+public class Hash{
+public static void main(String[] args){
+HashMap<String, Integer> studentScores=new HashMap<>();
+studentScores.put("Kashish",95);
+studentScores.put("Simran",97);
+studentScores.put("Komal",90);
+studentScores.put("Guri",95);
+
+Integer kashishScore=studentScores.get("Kashish");
+System.out.println("Kashish's Score: "+kashishScore);
+
+Boolean hasBob=studentScores.containsKey("Bob");
+System.out.println("Does the data contain Bob: "+hasBob);
+
+Boolean hasScore92=studentScores.containsValue(92);
+System.out.println("Does data have score of 92: "+hasScore92);
+
+System.out.println("All Students and their scores: ");
+for(String name : studentScores.keySet()){
+System.out.println("Student: "+name+",Score: "+studentScores.get(name));
+}
+}
+}

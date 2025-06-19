@@ -1,0 +1,30 @@
+/*Create a java program that uses a HashMap to manage a student gradebook. The program should store student names(String) as keys and their corresponding grades(Integer) as values. Implement the following functionalities:
+1.Add anew Student and their grade.
+2.Update a student's grade.
+3.Display the grade of a specific student,
+4. Remove a student from the grade book.
+5. Display all students and their grades.
+6. Calculate and display the average grade of all students.
+*/
+import java.util.*;
+public class GradeBook{
+public static void main(String[] args){
+HashMap<String, Integer> studentGrades=new HashMap<>();
+studentGrades.put("Kashish",95);
+studentGrades.put("Simran",89);
+studentGrades.put("Ravi",75);
+studentGrades.put("Kashish",100);
+Integer kashishScore=studentGrades.get("Kashish");
+System.out.println("Kashish's Score: "+kashishScore);
+studentGrades.remove("Ravi");
+System.out.println("All Students and their scores: ");
+for(String name : studentGrades.keySet()){
+System.out.println("Student: "+name+",Score: "+studentGrades.get(name));
+int grade1 = studentGrades.get("Kashish");
+int grade2 = studentGrades.get("Simran");
+int sum = grade1 + grade2;
+int average = sum / 2;
+System.out.println("Average grade: " + average);
+}
+}
+}

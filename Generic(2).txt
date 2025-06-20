@@ -1,0 +1,23 @@
+class Gen<T1,T2>{
+T1 name;
+T2 value;
+Gen(T1 o1, T2 o2){
+name=o1;
+value=o2;
+}
+public T1 getName(){
+return name;
+}
+public T2 getValue(){
+return value;
+}
+}
+class Generics2{
+public static void main(String[] args){
+Gen<Integer,String> obj= new Gen<>(2025,"Lovely Professional University");
+//String s=obj.getName();
+System.out.println(obj.getName());
+//Integer i=obj.getValue();
+System.out.println(obj.getValue());
+}
+}

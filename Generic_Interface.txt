@@ -1,0 +1,17 @@
+/*
+Let's create a very simple example program where we will create a generic interface A and implementing class Test. Then the implementation class will implement the method of interface A to display a message.
+*/
+interface A<T>{
+void display(T message);
+}
+class Test implements A<String>{
+public void display(String message){
+System.out.println("Message: "+message);
+}
+}
+public class GenericInterface{
+public static void main(String[] args){
+Test obj=new Test();
+obj.display("Hello LPU....");
+}
+}

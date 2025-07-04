@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+</head>
+<body>
+
+    <!-- Main Heading -->
+    <h1 >Welcome to My Webpage</h1>
+
+    <!-- Description -->
+    <p>This is the first website built by me.</p>
+
+    <!-- Link to another page -->
+    <p>
+        <a href="https://www.example.com">Visit Example</a>
+    </p>
+
+    <!-- Line printing in next line -->
+    <p>This is line one.<br>This is line two.</p>
+
+    <!-- Image Tag -->
+    <img src="screenshot.png" alt="Placeholder Image" width="300" height="200">
+    
+    <!-- Text Formatting -->
+    <p><b>Bold Text</b></p>
+    <p><i>Italic Text</i></p>
+    <p><u>Underlined Text</u></p>
+    <p><strong>Strong Text</strong></p>
+    <p><em>Emphasized Text</em></p>
+
+    <!-- Preformatted Text -->
+    <pre>
+Welcome
+   to the 
+   page.
+    </pre>
+
+    <!-- Font Style Examples -->
+    <p><big>Big Text</big></p>
+    <p><small>Small Text</small></p>
+    <p>Water formula: H<sub>2</sub>O</p>
+    <p>Exponent: 2<sup>4</sup> = 16</p>
+    <p><mark>Highlighted Text</mark></p>
+
+    <!-- Special Characters -->
+    <p>5 &lt; 10 &amp; 10 &gt; 5</p>
+    <p>&copy; 2025</p>
+
+    <!-- This paragraph is commented and will not show -->
+    <!-- <p>This paragraph is hidden</p> -->
+
+</body>
+</html>

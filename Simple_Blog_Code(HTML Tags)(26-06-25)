@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Post</title>
+</head>
+<body>
+    <header>
+        <h1>Blog Webiste</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <article>
+            <h2>My Journey into Web Development</h2>
+            <p>Starting my journey into web development has been an exciting experience. </p>
+            <p>So far, I've created a few basic projects like a personal portfolio, a to-do list, and even a simple blog. I'm excited to learn more about backend development, databases, and frameworks in the future.</p>
+        </article>
+        <aside>
+            <h3>Recent Posts</h3>
+            <ul>
+                <li><span>Why I Chose Web Development</span></li>
+                <li><b>Top 5 HTML Tags for Beginners</b></li>
+                <li><em>How I Built My First Website</em></li>
+            </ul>
+        </aside>
+    </main>
+    <div style="padding: 10px; background-color:lightgray;">
+        <h2>Comments Section</h2>
+        <p><i>Very Useful Website</i></p>
+    </div>
+    <p>This is a <span style="color: blue;">Highlighted</span> word.</p>
+    <footer>
+        <hr>
+        <p>&copy; 2025 Blog Website</p>
+    </footer>
+
+</body>
+</html>
